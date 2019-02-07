@@ -1,0 +1,172 @@
+$login-color:#254459;
+$form-login-icon:#436d73;
+$form-login-button:#436d73;
+
+/*input*/
+$label-color:#000;          // üstünde olan label
+$label-focus-color:#000; //küçüldüğünde
+$form-icon-focus-color:#000;
+$caret-color:#436d73; //imleç rengi
+
+/*github gelene kadar*/
+.isDisabled {
+	pointer-events:none;
+	
+}
+
+body {
+ /*position*/
+ width: 100%;
+ height: 100vh;
+/*theme*/
+background-color: grey;
+}
+.login-block{
+/*position*/
+width: 30vw;
+height: 80vh;
+margin: 15vh auto;
+border-radius: 10px;
+overflow: hidden;
+padding: 3% 5%;
+
+/*theme*/
+position: relative;
+background: white;
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+
+/*other*/
+h1{
+	margin: 0 auto;
+	color: $login-color;
+	font-family: 'Poppins', sans-serif;
+	font-size: 39px;
+	line-height: 1.2;
+	text-align: center;
+}
+.form-brackets {    
+/*position*/
+width: 85%;
+margin: 15px auto; 
+
+	/*theme*/
+	text-align: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	line-height: 0.1em;
+
+  /*other*/
+  span {font-size: 0.8rem; background:#fff; padding:0 10px; color: rgba(0,0,0,0.54);}
+
+} 
+
+
+
+}
+
+.form_login{
+/*form input selection*/
+ /* label color */
+ input {
+ 	caret-color:$caret-color;
+ }
+ .input-field label {
+ 	color: $label-color;
+ }
+   /* label focus color */
+   .input-field input[class="validate"]:focus + label {
+   	color: $label-focus-color;
+   }
+   /* label underline focus color */
+   .input-field input[class="validate"]:focus {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[class="validate"].valid {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[class="validate"].invalid {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+   	color:$form-icon-focus-color ;
+   }
+
+
+	/*other*/
+	i{
+		color:$form-login-icon;
+	}
+
+
+	.loginButtonD{
+		display: flex;
+		justify-content: center;
+
+		button{
+			padding: 0px 15px;
+			border-radius: 6px;
+			background:$form-login-button;
+		}
+	}
+	.helper-text{
+		font-size: .9rem;
+		transition:0.5s all ease-in-out;
+		&:hover{
+			color: #8B2E5F;
+		}
+	}
+}
+
+.form_other-login{
+/*position*/
+display: flex;
+justify-content:space-evenly;
+margin-bottom: 20px;
+/*other*/
+a{
+/*position*/
+width: 50px;
+height: 50px;
+margin: 5px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+justify-content: center;
+
+/*theme*/
+font-size: 25px;
+color: #fff;
+align-items: center;
+border-radius: 50%;
+transition: 0.5s all linear;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+.form_login-google{
+	background: #ea4335;
+	&:hover{background: black;}
+}
+.form_login-github{
+	background: #233740;
+	&:hover{
+		background: black ;
+	}
+}
+}
+
+.form_other-signin{
+	display: flex;
+	justify-content:center;
+}
