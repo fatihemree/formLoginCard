@@ -21,6 +21,8 @@ body {
 /*theme*/
 background-color: grey;
 }
+
+
 .login-block{
 /*position*/
 width: 30vw;
@@ -32,12 +34,8 @@ padding: 3% 5%;
 
 /*theme*/
 position: relative;
-background: white;
-display: -webkit-flex;
-display: -moz-flex;
-display: -ms-flex;
-display: -o-flex;
-display: flex;
+background: #fff;
+display: none;
 
 /*other*/
 h1{
@@ -169,4 +167,9 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 .form_other-signin{
 	display: flex;
 	justify-content:center;
+}
+
+.active{
+display: block;
+	
 }

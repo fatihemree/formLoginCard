@@ -20,12 +20,8 @@ body {
   padding: 3% 5%;
   /*theme*/
   position: relative;
-  background: white;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  background: #fff;
+  display: none;
   /*other*/ }
 .login-block h1 {
   margin: 0 auto;
@@ -126,5 +122,8 @@ body {
 .form_other-signin {
   display: flex;
   justify-content: center; }
+
+.active {
+  display: block; }
 
 /*# sourceMappingURL=login.css.map */
