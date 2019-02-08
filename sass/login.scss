@@ -21,16 +21,18 @@ body {
 /*theme*/
 background-color: grey;
 }
-
+#close{
+	position: absolute;
+}
 
 .login-block{
 /*position*/
 width: 30vw;
-height: 80vh;
-margin: 15vh auto;
+height: auto;
+margin: 5vh auto;
 border-radius: 10px;
 overflow: hidden;
-padding: 3% 5%;
+padding: 2% 4%;
 
 /*theme*/
 position: relative;
@@ -107,30 +109,16 @@ margin: 15px auto;
 
 	.loginButtonD{
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
+		
 
 		button{
 			padding: 0px 15px;
 			border-radius: 6px;
 			background:$form-login-button;
+			margin: auto 0;
 		}
-	}
-	.helper-text{
-		font-size: .9rem;
-		transition:0.5s all ease-in-out;
-		&:hover{
-			color: #8B2E5F;
-		}
-	}
-}
-
-.form_other-login{
-/*position*/
-display: flex;
-justify-content:space-evenly;
-margin-bottom: 20px;
-/*other*/
-a{
+		a{
 /*position*/
 width: 50px;
 height: 50px;
@@ -149,6 +137,7 @@ align-items: center;
 border-radius: 50%;
 transition: 0.5s all linear;
 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+i{ color:white;}
 }
 
 
@@ -162,6 +151,23 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		background: black ;
 	}
 }
+	}
+	.helper-text{
+		font-size: .9rem;
+		transition:0.5s all ease-in-out;
+		&:hover{
+			color: #8B2E5F;
+		}
+	}
+}
+
+.form_other-login{
+/*position*/
+display: flex;
+justify-content:space-evenly;
+margin-bottom: 20px;
+/*other*/
+
 }
 
 .form_other-signin{
@@ -169,6 +175,10 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	justify-content:center;
 }
 
+.loginUsers{
+	display: none;
+}
+.signUsers{ display: block;}
 .active{
 display: block;
 	

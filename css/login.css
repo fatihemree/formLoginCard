@@ -10,14 +10,17 @@ body {
   /*theme*/
   background-color: grey; }
 
+#close {
+  position: absolute; }
+
 .login-block {
   /*position*/
   width: 30vw;
-  height: 80vh;
-  margin: 15vh auto;
+  height: auto;
+  margin: 5vh auto;
   border-radius: 10px;
   overflow: hidden;
-  padding: 3% 5%;
+  padding: 2% 4%;
   /*theme*/
   position: relative;
   background: #fff;
@@ -75,24 +78,13 @@ body {
   color: #436d73; }
 .form_login .loginButtonD {
   display: flex;
-  justify-content: center; }
+  justify-content: space-between; }
 .form_login .loginButtonD button {
   padding: 0px 15px;
   border-radius: 6px;
-  background: #436d73; }
-.form_login .helper-text {
-  font-size: .9rem;
-  transition: 0.5s all ease-in-out; }
-.form_login .helper-text:hover {
-  color: #8B2E5F; }
-
-.form_other-login {
-  /*position*/
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 20px;
-  /*other*/ }
-.form_other-login a {
+  background: #436d73;
+  margin: auto 0; }
+.form_login .loginButtonD a {
   /*position*/
   width: 50px;
   height: 50px;
@@ -110,18 +102,38 @@ body {
   border-radius: 50%;
   transition: 0.5s all linear;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
-.form_other-login .form_login-google {
+.form_login .loginButtonD a i {
+  color: white; }
+.form_login .loginButtonD .form_login-google {
   background: #ea4335; }
-.form_other-login .form_login-google:hover {
+.form_login .loginButtonD .form_login-google:hover {
   background: black; }
-.form_other-login .form_login-github {
+.form_login .loginButtonD .form_login-github {
   background: #233740; }
-.form_other-login .form_login-github:hover {
+.form_login .loginButtonD .form_login-github:hover {
   background: black; }
+.form_login .helper-text {
+  font-size: .9rem;
+  transition: 0.5s all ease-in-out; }
+.form_login .helper-text:hover {
+  color: #8B2E5F; }
+
+.form_other-login {
+  /*position*/
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  /*other*/ }
 
 .form_other-signin {
   display: flex;
   justify-content: center; }
+
+.loginUsers {
+  display: none; }
+
+.signUsers {
+  display: block; }
 
 .active {
   display: block; }

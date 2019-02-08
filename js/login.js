@@ -1,3 +1,8 @@
+$(document).ready(function(){
+  $('.datepicker').datepicker();
+});
+
+
 
 document.querySelector("#tikla").addEventListener("click" ,animate);
 let loginGrid=document.querySelector(".login-block");
@@ -6,15 +11,18 @@ let loginGrid=document.querySelector(".login-block");
 function animate(){
 
   animateCss(".login-block","fadeInDown");
-  loginGrid.addEventListener("animationstart",loginGrid.classList.toggle("active"));
+  loginGrid.addEventListener("animationstart",document.querySelector(".login-block").classList.toggle("active"));
+  }
 
 
-}
+
 
 document.querySelector("#close").addEventListener("click",close);
 function close(){
   animateCss(".login-block","fadeOutDown",function () {
-    loginGrid.addEventListener("animationstart",loginGrid.classList.toggle("active"));  });
+    loginGrid.addEventListener("animationstart",loginGrid.classList.toggle("active"));
+  
+  });
 
 }
 
@@ -27,8 +35,9 @@ function animateCss(element, animationName, callback) {
         node.classList.remove('animated', animationName);
         node.removeEventListener('animationend', handleAnimationEnd);
 
-        if (typeof callback === 'function') callback();
+        if (typeof callback === 'function') callback()
     }
 
     node.addEventListener('animationend', handleAnimationEnd);
 }
+
