@@ -22,7 +22,22 @@ body {
 background-color: grey;
 }
 #close{
+	/*positon*/
+	width: 35px;
+	height: 35px;
+	top: 10px;
+	right: 10px;
 	position: absolute;
+	/*theme*/
+	cursor: default;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background: #ea4335;
+	border-radius: 32%;
+	align-items: center;
+	color: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .login-block{
@@ -109,7 +124,7 @@ margin: 15px auto;
 
 	.loginButtonD{
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		
 
 		button{
@@ -118,7 +133,65 @@ margin: 15px auto;
 			background:$form-login-button;
 			margin: auto 0;
 		}
-		a{
+		
+
+
+
+}
+
+.signButtonD{
+@extend .loginButtonD;
+justify-content: space-around;
+a{
+/*position*/
+width: 50px;
+height: 50px;
+margin: 5px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+justify-content: center;
+
+/*theme*/
+font-size: 25px;
+color: #fff;
+align-items: center;
+border-radius: 50%;
+transition: 0.5s all linear;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+i{ color:white;}
+}
+.form_login-google{
+	background: #ea4335;
+	&:hover{background: black;}
+}
+.form_login-github{
+	background: #233740;
+	&:hover{
+		background: black ;
+	}
+}
+}
+
+.helper-text{
+	font-size: .9rem;
+	transition:0.5s all ease-in-out;
+	&:hover{
+		color: #8B2E5F;
+	}
+}
+}
+
+.form_other-login{
+
+/*position*/
+display: flex;
+justify-content:space-evenly;
+margin-bottom: 20px;
+/*other*/
+a{
 /*position*/
 width: 50px;
 height: 50px;
@@ -151,22 +224,9 @@ i{ color:white;}
 		background: black ;
 	}
 }
-	}
-	.helper-text{
-		font-size: .9rem;
-		transition:0.5s all ease-in-out;
-		&:hover{
-			color: #8B2E5F;
-		}
-	}
-}
 
-.form_other-login{
-/*position*/
-display: flex;
-justify-content:space-evenly;
-margin-bottom: 20px;
-/*other*/
+
+
 
 }
 
@@ -176,10 +236,11 @@ margin-bottom: 20px;
 }
 
 .loginUsers{
-	display: none;
+	//display: none;
 }
-.signUsers{ display: block;}
+.signUsers{ display: none;
+}
 .active{
-display: block;
+	display: block;
 	
 }
