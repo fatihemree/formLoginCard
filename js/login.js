@@ -1,43 +1,37 @@
+//date setting
 $(document).ready(function(){
   $('.datepicker').datepicker();
 });
 
+$("#tikla").click(function() {
 
-
-document.querySelector("#tikla").addEventListener("click" ,animate);
-let loginGrid=document.querySelector(".login-block");
-
-
-function animate(){
-
-  animateCss(".login-block","fadeInDown");
-  loginGrid.addEventListener("animationstart",document.querySelector(".login-block").classList.toggle("active"));
-  }
+  $(".login-block").toggleClass("animated fadeInDown").
+  css("display","block")
+  .toggleClass("animated fadeInDown","slow");
 
 
 
 
-document.querySelector("#close").addEventListener("click",close);
-function close(){
-  animateCss(".login-block","fadeOutDown",function () {
-    loginGrid.addEventListener("animationstart",loginGrid.classList.toggle("active"));
+});
+
+$("#close").click(function() {
+ 
+ $(".login-block").toggleClass("animated zoomOut")
+ .toggleClass("animated zoomOut","slow",function(){ $(".login-block").hide()});
+ 
+
+ 
+} );
+
+
+
+
+
+
+
   
-  });
-
-}
 
 
-function animateCss(element, animationName, callback) {
-    const node = document.querySelector(element);
-    node.classList.add('animated', animationName);
 
-    function handleAnimationEnd() {
-        node.classList.remove('animated', animationName);
-        node.removeEventListener('animationend', handleAnimationEnd);
 
-        if (typeof callback === 'function') callback()
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd);
-}
 
