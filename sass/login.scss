@@ -1,4 +1,4 @@
-$login-color:#254459;
+$login-color:#436d73;
 $form-login-icon:#436d73;
 $form-login-button:#436d73;
 
@@ -78,6 +78,27 @@ margin: 15px auto;
 
 } 
 
+.users-loginButton{
+/*positon*/
+/*position*/
+width: 85%;
+margin: 15px auto; 
+
+	/*theme*/
+	text-align: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	line-height: 0.1em;
+
+  /*other*/
+  span {border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 5px 15px;
+    cursor: default;
+    background: white;
+}
+
+}
+
 
 
 }
@@ -137,12 +158,12 @@ margin: 15px auto;
 
 
 
-}
+	}
 
-.signButtonD{
-@extend .loginButtonD;
-justify-content: space-around;
-a{
+	.signButtonD{
+		@extend .loginButtonD;
+		justify-content: space-around;
+		a{
 /*position*/
 width: 50px;
 height: 50px;
@@ -235,6 +256,9 @@ i{ color:white;}
 	justify-content:center;
 }
 .signUsers{ display: none;}
+
+
+
 
 .active{
 	display: block;
