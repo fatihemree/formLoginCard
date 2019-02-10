@@ -16,8 +16,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:800" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/login.css">
+	<script src="js/ajax.js"></script>
 </head>
 <body>
+<div id="yaz"></div>
+	
 	<button id="tikla">sig in</button>
 
 	<div class="login-block">
@@ -42,9 +45,9 @@
 						<label for="icon-password">Parola</label>
 						<a class="helper-text right-align" href=""> Parolanızı mı unuttunuz?</a>
 					</div>
-					<div class="input-field col s12 loginButtonD">  <button class="btn waves-effect waves-light" type="submit" name="fatih">Giriş
-
-					</button></div>
+					<div class="input-field col s12 loginButtonD">  
+						<button class="btn waves-effect waves-light" type="button">Giriş</button>
+					</div>
 
 				</div>
 			</form>
@@ -66,40 +69,40 @@
 		<div class="row signUsers">
 			<!--	 <a class="waves-effect waves-teal btn-flat">Giriş Yap</a>  -->
 			<h1>Kayıt Ol</h1>
-			<form class="col s12 form_login">
+			<form method="post" class="col s12 form_login  kayit">
 				<div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">account_circle</i>
-						<input id="signUserName" type="text" class="validate"  name="signUserName">
+						<input id="signUserName" type="text" class="validate"  name="person[username]">
 						<label for="signUserName">Kullanıcı Adı</label>
 					</div>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">email</i>
-						<input id="siginEposta" type="text" class="validate">
+						<input id="siginEposta" type="text" class="validate" name="person[email]">
 						<label for="siginEposta">E-posta</label>
 					</div>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">lock
 						</i>
-						<input id="siginPassword" type="password" class="validate">
+						<input id="siginPassword" type="password" class="validate" name="person[password]">
 						<label for="siginPassword">Parola</label>
 					</div>
 					<div  class="input-field col s12">
 						<i class="material-icons prefix">lock
 						</i>
-						<input id="siginPasswordTick" type="password" class="validate">
+						<input id="siginPasswordTick" type="password" class="validate" name="sifre">
 						<label for="siginPasswordTick">Parolayı Onayla</label>
 					</div>
 					<div class="input-field col s12">
 						<i class="material-icons prefix">date_range
 						</i>
-						<input id="siginDate" type="text" class="datepicker">
+						<input id="siginDate" type="text" class="datepicker" name="onay">
 						<label for="siginDate">Doğum Tarihiniz</label>
 					</div>
 
 					<div class="input-field col s12 signButtonD">
 						<a class="form_login-google" href=""><i class="fab fa-google"></i></a>
-						<button class="btn waves-effect waves-light " type="submit" name="fatih">Kayıt Ol</button>
+						<button class="btn waves-effect waves-light " type="button" name="loginButton">Kayıt Ol</button>
 						<a class="form_login-github isDisabled" href="" ><i class="fab fa-github"></i></a>
 
 					</div>
@@ -114,9 +117,27 @@
 
 	</div>
 
+
+
+
+ 
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 	<script src="js/login.js"></script>
+
+<script>
+$("button[name='loginButton']").click(function() {
+
+let data = $( ".kayit" ).serializeArray()
+document.getElementById("yaz").innerHTML = data;
+
+});
+
+</script>
+
 </body>
 </html>
