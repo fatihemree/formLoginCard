@@ -17,9 +17,9 @@ $caret-color:#436d73; //imleç rengi
 body {
  /*position*/
  width: 100%;
- height: 100vh;
+ 
 /*theme*/
-background-color: grey;
+background-color: white;
 }
 #close{
 	/*positon*/
@@ -44,10 +44,10 @@ background-color: grey;
 /*position*/
 width: 30vw;
 height: auto;
-margin: 5vh auto;
+margin: auto;
 border-radius: 10px;
 overflow: hidden;
-padding: 2% 4%;
+padding: 1.5% 4%;
 
 /*theme*/
 position: relative;
@@ -55,6 +55,13 @@ background: #fff;
 display: none;
 
 /*other*/
+#loading{
+	width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    //visibility: hidden;
+    display: none;
+}
 h1{
 	margin: 0 auto;
 	color: $login-color;

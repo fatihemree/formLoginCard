@@ -7,10 +7,12 @@ class myAjax {
   
   let xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     myAjax.codex["print"].innerHTML= this.responseText;
 
-   }
+    if (this.readyState == 4 && this.status == 200) {
+      //console.log(typeof this.codex["print"]);
+      this.codex["print"];
+      
+    }
  };
 
  xhttp.open(this.codex["tur"],this.codex["sendPage"],true);
@@ -24,23 +26,22 @@ class myAjax {
     tur:this.tur,
     sendPage:this.sendPage,
     form :function(keyform)  { 
-      console.log(keyform);
       let key=0;
 
       if (keyform[key] != "sendnot" && keyform[key] != "postsend" && keyform[key]!="formnot")
       {
        this.sendPage +="?"+ $(keyform[key]).serialize() ; }
        else if(keyform[key] != "sendnot" && keyform[key] == "postsend" && keyform[key]!="formnot"){
-
         if(keyform[++key]=="formnot"){
 
           this.postvalue=keyform[++key];
-          console.log(this.postvalue);
+          
         }
+        
         else{
 
-          this.postvalue=$(keyform[++key]).serialize();
-          
+          this.postvalue=$(keyform[key]).serialize();
+         
         }
 
       }
@@ -75,3 +76,4 @@ class myAjax {
 }
 
 
+//postsend bug çözüldü..
