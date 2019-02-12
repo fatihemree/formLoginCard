@@ -14,7 +14,7 @@ $(document).ready(function(){
   );
   
   $(".login-block").modal();
-
+  
 
 //open
 $("#tikla").click(function() {
@@ -46,7 +46,65 @@ $(".login_signButton").click(function() {
 //kayıt etmek
        $("button[name='loginButton']").click(function() {
   
+        $(".kayit").validate({
+          rules: {
+              username: {
+                  required: true,
+                  minlength: 5
+              },
+              email: {
+                  required: true,
+                  email:true
+              },
+              password: {
+          required: true,
+          minlength: 5
+        },
+        cpassword: {
+          required: true,
+          minlength: 5,
+          equalTo: "#siginPassword"
+        },
        
+          },
+          //For custom messages
+          messages: {
+              username:{
+                  required: "Lütfen bu alanı doldurun.",
+                  minlength: "En az 5 karekter giriniz."
+              },
+              email:{
+                required: "Lütfen bu alanı doldurun.",
+                email: "Lütfen doğru adres giriniz."
+            },
+            password:{
+              required: "Lütfen bu alanı doldurun.",
+              minlength: "En az 5 karekter giriniz."
+          }, 
+          cpassword:{
+            required: "Lütfen bu alanı doldurun.",
+            minlength: "En az 5 karekter giriniz.",
+            equalTo:"Lütfen şifreyi doğru giriniz."
+        },
+          },
+          errorElement : 'div',
+          errorPlacement: function(error, element) {
+            var placement = $(element).data('error');
+            $(placement).addClass("errForm");
+            if (placement) {
+              $(placement).append(error);
+            } else {
+              error.insertAfter(element);
+            }
+          },
+          /*success:function(){
+            console.log("başarılı");
+            
+          },*/
+          submitHandler:function(){
+           alert("fatih");
+          }
+       });
         
         myAjax(
           "post",
@@ -71,7 +129,7 @@ $(".login_signButton").click(function() {
               this.success=success;
               this.beforeSend=beforeSend;
               this.complete=complete;
-              console.log(this.beforeSend)
+            
               $.ajax({
                 type:this.type,
                 url: this.url,
@@ -84,45 +142,7 @@ $(".login_signButton").click(function() {
             }
             
             
-            $(".kayit").validate({
-              rules: {
-                  ussername: {
-                      required: true,
-                      minlength: 5
-                  },
-                  email: {
-                      required: true,
-                      email:true
-                  },
-                  password: {
-              required: true,
-              minlength: 5
-            },
-            cpassword: {
-              required: true,
-              minlength: 5,
-              equalTo: "#siginPassword"
-            },
            
-              },
-              //For custom messages
-              messages: {
-                  username:{
-                      required: "Lütfenbu alanı doldurun",
-                      minlength: "En az 5 karekter"
-                  }
-                  
-              },
-              errorElement : 'div',
-              errorPlacement: function(error, element) {
-                var placement = $(element).data('error');
-                if (placement) {
-                  $(placement).append(error)
-                } else {
-                  error.insertAfter(element);
-                }
-              }
-           });
             
             //ready content...
 });

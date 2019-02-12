@@ -40,6 +40,16 @@ body {
   background: #fff;
   display: none;
   /*other*/ }
+.login-block .errForm {
+  position: relative;
+  top: -0.5rem;
+  left: 3rem;
+  font-size: 0.8rem;
+  color: #FF4081;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%); }
 .login-block #loading {
   width: 90%;
   margin: 0 auto;
