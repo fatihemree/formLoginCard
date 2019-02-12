@@ -46,104 +46,96 @@ $(".login_signButton").click(function() {
 //kayıt etmek
        $("button[name='loginButton']").click(function() {
   
-        $(".kayit").validate({
-          rules: {
-              username: {
-                  required: true,
-                  minlength: 5
-              },
-              email: {
-                  required: true,
-                  email:true
-              },
-              password: {
-          required: true,
-          minlength: 5
-        },
-        cpassword: {
-          required: true,
-          minlength: 5,
-          equalTo: "#siginPassword"
-        },
        
-          },
-          //For custom messages
-          messages: {
-              username:{
-                  required: "Lütfen bu alanı doldurun.",
-                  minlength: "En az 5 karekter giriniz."
-              },
-              email:{
-                required: "Lütfen bu alanı doldurun.",
-                email: "Lütfen doğru adres giriniz."
-            },
-            password:{
-              required: "Lütfen bu alanı doldurun.",
-              minlength: "En az 5 karekter giriniz."
-          }, 
-          cpassword:{
-            required: "Lütfen bu alanı doldurun.",
-            minlength: "En az 5 karekter giriniz.",
-            equalTo:"Lütfen şifreyi doğru giriniz."
-        },
-          },
-          errorElement : 'div',
-          errorPlacement: function(error, element) {
-            var placement = $(element).data('error');
-            $(placement).addClass("errForm");
-            if (placement) {
-              $(placement).append(error);
-            } else {
-              error.insertAfter(element);
-            }
-          },
-          /*success:function(){
-            console.log("başarılı");
-            
-          },*/
-          submitHandler:function(){
-           alert("fatih");
-          }
-       });
-        
-        myAjax(
-          "post",
-          "users.php",
-          $(".kayit").serialize(),
-          function(){
-          M.toast({html: 'Giriş için  e-mail onay mesaji gönderdik', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
-          $("#loading").hide("fade","slow");
-        },
-        function(){
-          $("#loading").show("fade","fast");
-        });
+        //code empty
+     
       
             });
             
-          
-
-            function myAjax(type,url,data,success,beforeSend,complete){
-              this.type=type;
-              this.url=url;
-              this.data=data;
-              this.success=success;
-              this.beforeSend=beforeSend;
-              this.complete=complete;
-            
-              $.ajax({
-                type:this.type,
-                url: this.url,
-                data: this.data,
-                beforeSend:  this.beforeSend,
-                complete: this.complete ,
-                success: this.success,
-              })
-            
-            }
-            
-            
+            $(".kayit").validate({
+              rules: {
+                  username: {
+                      required: true,
+                      minlength: 5
+                  },
+                  email: {
+                      required: true,
+                      email:true
+                  },
+                  password: {
+              required: true,
+              minlength: 5
+            },
+            cpassword: {
+              required: true,
+              minlength: 5,
+              equalTo: "#siginPassword"
+            },
            
-            
+              },
+              //For custom messages
+              messages: {
+                  username:{
+                      required: "Lütfen bu alanı doldurun.",
+                      minlength: "En az 5 karekter giriniz."
+                  },
+                  email:{
+                    required: "Lütfen bu alanı doldurun.",
+                    email: "Lütfen doğru adres giriniz."
+                },
+                password:{
+                  required: "Lütfen bu alanı doldurun.",
+                  minlength: "En az 5 karekter giriniz."
+              }, 
+              cpassword:{
+                required: "Lütfen bu alanı doldurun.",
+                minlength: "En az 5 karekter giriniz.",
+                equalTo:"Lütfen şifreyi doğru giriniz."
+            },
+              },
+              errorElement : 'div',
+              errorPlacement: function(error, element) {
+                var placement = $(element).data('error');
+                $(placement).addClass("errForm");
+                if (placement) {
+                  $(placement).append(error);
+                } else {
+                  error.insertAfter(element);
+                }
+              },
+              submitHandler: function(){ 
+                myAjax(
+                  "post",
+                  "users.php",
+                  $(".kayit").serialize(),
+                  function(){
+                  M.toast({html: 'Giriş için  e-mail onay mesaji gönderdik', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
+                  $("#loading").hide("fade","slow");
+                },
+                function(){
+                  $("#loading").show("fade","fast");
+                });
+              }
+
+           });
+           function myAjax(type,url,data,success,beforeSend,complete){
+            this.type=type;
+            this.url=url;
+            this.data=data;
+            this.success=success;
+            this.beforeSend=beforeSend;
+            this.complete=complete;
+            console.log(this.beforeSend)
+            $.ajax({
+              type:this.type,
+              url: this.url,
+              data: this.data,
+              beforeSend:  this.beforeSend,
+              complete: this.complete ,
+              success: this.success,
+            })
+          
+          }
             //ready content...
 });
 

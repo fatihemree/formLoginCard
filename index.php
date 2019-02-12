@@ -112,13 +112,13 @@
 						<input id="siginDate"  type="text" class="datepicker" name="date" >
 						<label for="siginDate">Doğum Tarihiniz</label>
 					</div>
-</form>
 					<div class="input-field col s12 signButtonD">
 						<a class="form_login-google" href=""><i class="fab fa-google"></i></a>
-						<button class="btn waves-effect waves-light " type="button" name="loginButton">Kayıt Ol</button>
+						<button class="btn waves-effect waves-light " type="submit" name="loginButton">Kayıt Ol</button>
 						<a class="form_login-github isDisabled" href="" ><i class="fab fa-github"></i></a>
 
 					</div>
+</form>
 
 				</div>
 			
