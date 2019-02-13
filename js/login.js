@@ -56,12 +56,14 @@ $(".login_signButton").click(function() {
               rules: {
                   username: {
                       required: true,
-                      minlength: 5
+                      minlength: 3,
+                      remote:"check.php"
                   },
                   email: {
                       required: true,
-                      email:true
-                  },
+                      email:true,
+                    remote: "check.php"
+                },
                   password: {
               required: true,
               minlength: 5
@@ -77,11 +79,13 @@ $(".login_signButton").click(function() {
               messages: {
                   username:{
                       required: "Lütfen bu alanı doldurun.",
-                      minlength: "En az 5 karekter giriniz."
+                      minlength: "En az 3 karekter giriniz.",
+                     remote: jQuery.validator.format("{0} ismi kullanımda.")
                   },
                   email:{
                     required: "Lütfen bu alanı doldurun.",
-                    email: "Lütfen doğru adres giriniz."
+                    email: "Lütfen doğru adres giriniz.",
+                  remote: jQuery.validator.format("{0} zaten kullanımda")
                 },
                 password:{
                   required: "Lütfen bu alanı doldurun.",
@@ -136,6 +140,8 @@ $(".login_signButton").click(function() {
             })
           
           }
+
+          
             //ready content...
 });
 
